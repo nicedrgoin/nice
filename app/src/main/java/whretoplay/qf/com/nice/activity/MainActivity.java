@@ -1,12 +1,13 @@
 package whretoplay.qf.com.nice.activity;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -15,17 +16,15 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import whretoplay.qf.com.nice.R;
-import whretoplay.qf.com.nice.adapter.ViewPagerAdapter;
 import whretoplay.qf.com.nice.fragment.FragmentChat;
 import whretoplay.qf.com.nice.fragment.FragmentDiscover;
 import whretoplay.qf.com.nice.fragment.FragmentMain;
 import whretoplay.qf.com.nice.fragment.FragmentMe;
 
-public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener{
+public class MainActivity extends AppCompatActivity{
 
-    @BindView(R.id.main_viewpager)
-    ViewPager viewPager;
-    List<Fragment> list = new ArrayList<>();
+
+    List<Fragment> fragmentList=new ArrayList<>();
     @BindView(R.id.radioGroup)
     RadioGroup radioGroup;
     @BindView(R.id.rb_main)
@@ -36,55 +35,77 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     RadioButton radioButton_chat;
     @BindView(R.id.rb_me)
     RadioButton radioButton_me;
+    @BindView(R.id.rb_photo)
+    RadioButton radioButton_photo;
     private boolean isFirst = true;
     private long t1;
 
-
+    FragmentManager manager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(MainActivity.this);
 
-        list.add(new FragmentMain());
-        list.add(new FragmentDiscover());
-        list.add(new FragmentChat());
-        list.add(new FragmentMe());
+      initfragment();
 
 
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), list);
-        viewPager.setOffscreenPageLimit(5);
-        viewPager.setAdapter(viewPagerAdapter);
-        viewPager.addOnPageChangeListener(this);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.rb_main:
-                        viewPager.setCurrentItem(0, false);
-//                        stopAnim();
+                       selectFragment(0);
                         radioButton_main.setChecked(true);
                         break;
                     case R.id.rb_discover:
-                        viewPager.setCurrentItem(1, false);
-//                        stopAnim();
+                        selectFragment(1);
                         radioButton_discover.setChecked(true);
                         break;
                     case R.id.rb_chat:
-                        viewPager.setCurrentItem(2, false);
-//                        stopAnim();
+                        selectFragment(2);
                         radioButton_chat.setChecked(true);
                         break;
                     case R.id.rb_me:
-                        viewPager.setCurrentItem(3, false);
-//                        stopAnim();
+                        selectFragment(3);
                         radioButton_me.setChecked(true);
+                        break;
+                    case R.id.rb_photo:
+                        Intent intent=new Intent(MainActivity.this,CameraActivity.class);
+                        startActivity(intent);
                         break;
                 }
             }
         });
 
     }
+
+    private void initfragment() {
+        fragmentList.add(new FragmentMain());
+        fragmentList.add(new FragmentDiscover());
+        fragmentList.add(new FragmentChat());
+        fragmentList.add(new FragmentMe());
+        manager=getSupportFragmentManager();
+        FragmentTransaction ft=manager.beginTransaction();
+        ft.add(R.id.main_fragment_container,fragmentList.get(3));
+        ft.add(R.id.main_fragment_container,fragmentList.get(1));
+        ft.add(R.id.main_fragment_container,fragmentList.get(2));
+        ft.add(R.id.main_fragment_container,fragmentList.get(0));
+        ft.commit();
+    }
+
+    private void selectFragment(int num){
+        FragmentTransaction ft=manager.beginTransaction();
+        for (int i=0;i<fragmentList.size();i++){
+            if (i==num){
+                ft.show(fragmentList.get(i));
+            }else {
+                ft.hide(fragmentList.get(i));
+            }
+        }
+        ft.commit();
+    }
+
     @Override
     public void onBackPressed() {
         if (isFirst) {
@@ -101,32 +122,5 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         }
     }
 
-    @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-    }
-
-    @Override
-    public void onPageSelected(int position) {
-        for (int i = 0; i <radioGroup.getChildCount() ; i++) {
-            RadioButton childAt= (RadioButton) radioGroup.getChildAt(i);
-            if (position==i){
-                childAt.setChecked(true);
-            }else{
-                childAt.setChecked(false);
-            }
-        }
-    }
-
-    @Override
-    public void onPageScrollStateChanged(int state) {
-
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        viewPager.removeOnPageChangeListener(this);
-
-    }
 }

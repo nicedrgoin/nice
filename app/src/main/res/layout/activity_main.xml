@@ -4,22 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity">
-    <android.support.v4.view.ViewPager
-        android:id="@+id/main_viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/radioGroup"/>
-    <RelativeLayout
+    <FrameLayout
+        android:id="@+id/main_fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center">
-    </RelativeLayout>
-        <!--<ImageView-->
-            <!--android:id="@+id/loading_anim"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:src="@drawable/loading_anim"/>-->
-
+        android:layout_above="@+id/radioGroup"/>
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="match_parent"
@@ -31,25 +20,35 @@
             android:id="@+id/rb_main"
             style="@style/main_rb_style"
             android:checked="true"
-            android:text="首页" />
-            <!--android:drawableTop="@drawable/selector_main"-->
+            android:text="首页"
+            android:drawableTop="@drawable/tab_icon_main"/>
 
         <RadioButton
             android:id="@+id/rb_discover"
+            android:text="发现"
             style="@style/main_rb_style"
-            android:text="发现" />
-            <!--android:drawableTop="@drawable/selector_main_discover"-->
+            android:drawableTop="@drawable/icon_tab_discover"/>
+        <RadioButton
+            android:id="@+id/rb_photo"
+            style="@style/main_rb_style"
+            android:text="拍照"
+            android:drawableTop="@drawable/ic_floating_action_camera"
+            />
 
         <RadioButton
             android:id="@+id/rb_chat"
+
             style="@style/main_rb_style"
-            android:text="私聊" />
+
+            android:text="私聊"
+            android:drawableTop="@drawable/tab_icon_chat"/>
             <!--android:drawableTop="@drawable/selector_main_sence"-->
 
         <RadioButton
             android:id="@+id/rb_me"
             style="@style/main_rb_style"
-            android:text="我" />
+            android:text="我"
+            android:drawableTop="@drawable/icon_tab_me"/>
             <!--android:drawableTop="@drawable/selector_main_wode"-->
     </RadioGroup>
 
