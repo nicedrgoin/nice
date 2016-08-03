@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffd800"
+    tools:context="whretoplay.qf.com.nice.activity.Activitylogin">
+<ImageView
+    android:id="@+id/login_loglo"
+    android:layout_width="150dp"
+    android:layout_height="50dp"
+    android:scaleType="centerCrop"
+    android:src="@drawable/nice_splash_logo"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="56dp" />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/login_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@+id/login_loglo"/>
+    <LinearLayout
+        android:gravity="center"
+
+        android:layout_below="@+id/login_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/viewpager_point"/>
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/viewpager_point"/>
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/viewpager_point"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/registered"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="微信注册"
+        android:gravity="center"
+        android:drawableLeft="@drawable/login_wx_icon"
+        android:layout_above="@+id/anotherway"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <Button
+        android:id="@+id/anotherway"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="其他方式注册"
+        android:alpha="0.4"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <Button
+        android:id="@+id/haveaccount"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:alpha="0.4"
+        android:text="已有账号登录"
+
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>

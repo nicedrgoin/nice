@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/safety" android:title="账号与安全"></item>
+    <item android:id="@+id/privacy" android:title="隐私"></item>
+    <item android:id="@+id/notification" android:title="通知"></item>
+    <item android:id="@+id/praise" android:title="我赞过的照片"></item>
+    <item android:id="@+id/common" android:title="通用"></item>
+    <item android:id="@+id/invite" android:title="邀请好友"></item>
+    <item android:id="@+id/about" android:title="关于"></item>
+    <item android:id="@+id/feedback" android:title="用户反馈"></item>
+
+</menu>
