@@ -1,4 +1,4 @@
-package whretoplay.qf.com.nice;
+package whretoplay.qf.com.nice.activity;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -13,6 +13,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import whretoplay.qf.com.nice.R;
 import whretoplay.qf.com.nice.adapter.ViewPagerAdapter;
 import whretoplay.qf.com.nice.fragment.FragmentChat;
 import whretoplay.qf.com.nice.fragment.FragmentDiscover;
