@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         list.add(new FragmentDiscover());
         list.add(new FragmentChat());
         list.add(new FragmentMe());
-
+        Log.e("---","-----");
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), list);
         viewPager.setOffscreenPageLimit(5);
