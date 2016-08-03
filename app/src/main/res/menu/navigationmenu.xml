@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+   <group>
+    <item android:id="@+id/myfrend" android:title="新的朋友" android:icon="@drawable/icon_tab_discover"></item>
+    <item android:id="@+id/mymessage" android:title="我的消息" android:icon="@drawable/icon_tab_discover"></item>
+    <item android:id="@+id/trends" android:title="好友动态" android:icon="@drawable/icon_tab_discover"></item>
+</group>
+<group>
+<item android:id="@+id/attent" android:title="关注" android:icon="@drawable/icon_tab_discover"></item>
+    <item android:id="@+id/fans" android:title="粉丝" android:icon="@drawable/icon_tab_discover"></item>
+    <item android:id="@+id/lable" android:title="标签" android:icon="@drawable/icon_tab_discover"></item>
+    <item android:id="@+id/setting" android:title="设置" android:icon="@drawable/icon_tab_discover"></item>
+</group>
+</menu>

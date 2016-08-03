@@ -1,13 +1,31 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:myview="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="whretoplay.qf.com.nice.fragment.FragmentChat">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <whretoplay.qf.com.nice.utils.TextViewPlus
+        android:id="@+id/chat_serch"
+        android:drawableLeft="@drawable/search_icon_new"
+        android:text="搜索用户"
+        myview:left_height="15dp"
+        myview:left_width="15dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="chat" />
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textSize="15dp"
+        />
+    <View
+        android:layout_below="@+id/chat_serch"
+    android:layout_width="wrap_content"
+    android:layout_height="0.05dp"
+    android:layout_margin="5dp"
+    android:background="#ff909090"/>
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
-</FrameLayout>
+</LinearLayout>

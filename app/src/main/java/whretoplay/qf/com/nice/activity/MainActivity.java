@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     private boolean isFirst = true;
     private long t1;
 
-    TextView textView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
