@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="whretoplay.qf.com.nice.MainActivity">
+    <android.support.v4.view.ViewPager
+        android:id="@+id/main_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/radioGroup"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+    </RelativeLayout>
+        <!--<ImageView-->
+            <!--android:id="@+id/loading_anim"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/loading_anim"/>-->
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_main"
+            style="@style/main_rb_style"
+            android:checked="true"
+            android:text="首页" />
+            <!--android:drawableTop="@drawable/selector_main"-->
+
+        <RadioButton
+            android:id="@+id/rb_discover"
+            style="@style/main_rb_style"
+            android:text="发现" />
+            <!--android:drawableTop="@drawable/selector_main_discover"-->
+
+        <RadioButton
+            android:id="@+id/rb_chat"
+            style="@style/main_rb_style"
+            android:text="私聊" />
+            <!--android:drawableTop="@drawable/selector_main_sence"-->
+
+        <RadioButton
+            android:id="@+id/rb_me"
+            style="@style/main_rb_style"
+            android:text="我" />
+            <!--android:drawableTop="@drawable/selector_main_wode"-->
+    </RadioGroup>
+
+</RelativeLayout>
