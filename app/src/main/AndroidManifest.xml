@@ -15,6 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.ActivitySetting" />
+        <activity android:name=".activity.Activitylogin" />
+        <activity android:name=".activity.ActivityWeChat" />
+        <activity android:name=".activity.ActivityHaveCount"></activity>
     </application>
 
 </manifest>
